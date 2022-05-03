@@ -6,6 +6,7 @@ import Step2 from './pages/Step2';
 import Step3 from './pages/Step3';
 import Result from './pages/Result';
 import Header from './components/Header';
+import DataContext from './DataContext';
 
 const theme = createTheme({
 });
@@ -15,6 +16,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <>
       <Header/>
+      <DataContext>
       <Router>
           <Routes>
             <Route path="/" element={<Step1/>}/>
@@ -23,6 +25,7 @@ function App() {
             <Route path="/result" element={<Result/>}/>
           </Routes>
       </Router>
+      </DataContext>
       </>
    </ThemeProvider>
   );
