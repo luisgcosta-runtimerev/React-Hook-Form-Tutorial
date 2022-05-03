@@ -5,6 +5,8 @@ import Form from '../components/Form'
 import { useNavigate } from 'react-router-dom'
 import { MyContext } from '../DataContext'
 import { useForm } from 'react-hook-form'
+import PrimaryButton from '../components/PrimaryButton'
+import FileInput from '../components/FileInput'
 
 export default function Step3() {
   const navigate = useNavigate();
@@ -17,7 +19,7 @@ export default function Step3() {
 
   const onSubmit = (data) => {
     navigate('/result')
-    context.myData.setValues(data)
+    context.setValues(data)
   }
 
   return (
@@ -26,7 +28,8 @@ export default function Step3() {
         Step3
       </Typography>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        
+        <FileInput name="files" control={control} />
+        <PrimaryButton>Next</PrimaryButton>
       </Form>
     </MainContainer>
   )
